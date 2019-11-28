@@ -29,4 +29,4 @@ function stat() {
     obj = gxl.reduce((ftp, i) => {ftp[i] ? ftp[i]++ : ftp[i] = 1;return ftp}, {})
 
     document.getElementById('result').innerText = JSON.stringify(obj)
-}s
+}
