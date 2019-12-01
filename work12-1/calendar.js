@@ -23,7 +23,7 @@ function calendar(y){
             }
             w=(w + 1 >6) ? 0 : w +1;
             }
-            html +='</table>';
+            html +='</table>'; 
         }
             html +='</div>';
             console.log(html)
