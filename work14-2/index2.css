@@ -1,0 +1,21 @@
+.box {
+    margin: 0 auto;
+    position: relative;
+    background: url(235.jpg);
+    background-size:cover;
+    width: 702px;
+    height: 378px;
+}
+
+.box div {
+    float: left;
+    width: 50px;
+    height: 50px;
+    border: 1px solid #cccc;
+    margin-left: 5px;
+    line-height: center;
+    color: yellow;
+    position: relative;
+    top: 328px;
+    left: 350px;
+}
