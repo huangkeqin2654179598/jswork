@@ -88,13 +88,16 @@
 }
 
 .car-del,
-.cart-all {
+.cart-all,
+.cart-unall {
     color:#3366D4;
 }
+
 .cart-del:hover,
-.cart-all:hover {
+.cart-all:hover,
+.cart-unall:hover  {
     text-decoration: underline;
-    cursor: pointer
+    cursor: pointer;
 }
 
 .cart-bottom {

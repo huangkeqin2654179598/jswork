@@ -115,7 +115,7 @@
                 }
                 this.updateTotal();
         },
-        /**
+        /*
          * 全不选
          */
         uncheckAll:function() {
@@ -125,7 +125,7 @@
             this.updateTotal();
         }
     };
-    /**
+    /*
      * Item 购物车中的单间商品
      * @constructor
      * @param {String} tmp 模板
