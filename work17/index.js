@@ -35,21 +35,21 @@ function getRegMsg(name,tips) {
             reg =/^[a-zA-Z]{4,12}$/;
             msg = {'success':'用户名输入正确','error':tips};
             break;
-        case'pwd':
+        case 'pwd':
             reg = /^\w{6,20}$/;
-            msg = {'success':'密码输入正确','error':tips};
+            msg = {'success':'密码输入正确','error': tips};
             break;
         case 'repwd':
-            var con = document.getElementsByClassName('input')[1].value;
+            var con = document.getElementsByTagName('input') [1].value;
             reg = RegExp("^" + con + "$");
-            msg = {'success':'两次密码输入正确','error':'两次密码输入不一致'};
+            msg = {'success':'两次密码输入正确','error': '两次输入的密码不一致'};
             break;
         case 'tel':
             reg = /^1[34578]\d{9}$/;
-            msg = {'success':'手机号码输入正确','error':tips};
+            msg = {'success':'手机号码输入正确','error': tips};
             break;
         case 'email':
-            reg = /^(w+(\_|\-|\.)*)+@(\w+(\-)?)+(\.\w{2,}+$)/;
+            reg = /^(\w+(\_|\-|\.)*)+@(\w+(\-)?)+(\.\w{2,})+$/;
             msg = {'success':'邮箱输入正确','error':tips};
             break;
     }
