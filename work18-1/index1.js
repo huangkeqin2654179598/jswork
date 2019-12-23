@@ -111,10 +111,12 @@ var PageList = new PageList({
     last:document.getElementById('page_last'),
     pageNum:document.getElementById('page_num'),
     onChange:function () {
-        comment.ajax('http://139.9.81.203:8090/ajax?page=' + this.page, function () {
+        comment.ajax('http://localhost:8080/ajax?page=' + this.page, function () {
+        //comment.ajax('http://139.9.81.203:8090/ajax?page=' + this.page, function () {
             progressBar = new ProgressBar(progressContainer);
             ProgressBar.show();
-    },function (obj) {
+    },
+     function (obj) {
         PageList.maxPage = obj.maxPage;
         PageList.updateStatus();
         comment.create(obj.data);
