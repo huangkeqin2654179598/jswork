@@ -40,8 +40,12 @@ function getRegMsg(name,tips) {
             msg = {'success':'密码输入正确','error': tips};
             break;
         case 'repwd':
+<<<<<<< HEAD
             var con;
             var con = document.getElementsByTagName('input')[1].value;
+=======
+            var con = document.getElementsByTagName('input') [1].value;
+>>>>>>> d384fbc43dbd4daae308b8aa822d8c8d8b0f1170
             reg = RegExp("^" + con + "$");
             msg = {'success':'两次密码输入正确','error': '两次输入的密码不一致'};
             break;
