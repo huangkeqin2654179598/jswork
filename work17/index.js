@@ -17,14 +17,14 @@ function inputBlur () {
         return false;
     }
     //3.获取正则匹配规则和提示信息
-    var reg_msg  = getRegMsg(name,tips);
+    var reg_msg  = getRegMsg(name, tips);
     //4.检测是否he正在匹配
-    if (reg_msg['reg'].test(val) ){
+    if (reg_msg['reg'].test(val)) {
         //匹配成功，显示成功的提示信息
-        success (tips_obj,reg_msg['msg']['success']);
+        success (tips_obj, reg_msg['msg']['success']);
      } else {
         //匹配失败，显示失败的提示信息
-        error(tips_obj,reg_msg['msg']['error']);
+        error(tips_obj, reg_msg['msg']['error']);
     }
 }
 //根据input的name值，设置正则规则及提示信息
@@ -35,25 +35,26 @@ function getRegMsg(name,tips) {
             reg =/^[a-zA-Z]{4,12}$/;
             msg = {'success':'用户名输入正确','error':tips};
             break;
-        case'pwd':
+        case 'pwd':
             reg = /^\w{6,20}$/;
-            msg = {'success':'密码输入正确','error':tips};
+            msg = {'success':'密码输入正确','error': tips};
             break;
         case 'repwd':
-            var con = document.getElementsByClassName('input')[1].value;
+            var con;
+            var con = document.getElementsByTagName('input')[1].value;
             reg = RegExp("^" + con + "$");
-            msg = {'success':'两次密码输入正确','error':'两次密码输入不一致'};
+            msg = {'success':'两次密码输入正确','error': '两次输入的密码不一致'};
             break;
         case 'tel':
             reg = /^1[34578]\d{9}$/;
-            msg = {'success':'手机号码输入正确','error':tips};
+            msg = {'success':'手机号码输入正确','error': tips};
             break;
         case 'email':
-            reg = /^(w+(\_|\-|\.)*)+@(\w+(\-)?)+(\.\w{2,}+$)/;
+            reg = /^(\w+(\_|\-|\.)*)+@(\w+(\-)?)+(\.\w{2,})+$/;
             msg = {'success':'邮箱输入正确','error':tips};
             break;
     }
-    return {'reg':reg,'msg':msg};
+    return {'reg': reg, 'msg':msg};
 }
 //成功
 function success(obj,msg){

@@ -12,7 +12,7 @@
     left: 360px;
     border: 1px solid #ccc;
     overflow: hidden;
-    display: none;
+    display: none
 }
 
 .mask {
@@ -23,7 +23,7 @@
     top: 0;
     left: 0;
     cursor: move;
-    display: none;
+    display: none
 }
 
 .small {
