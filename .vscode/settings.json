@@ -1,0 +1,26 @@
+{
+    "php.validate.executablePath": "C:\\xampp\\php\\php.exe",
+    "javascript.validate.enable": true,
+    
+//vscode-icons插件设置
+"vsicons.presets.hideFolders": false,
+"workbench.iconTheme": "vscode-icons",
+
+// PHP基本设置与PHP智能感知
+"php.suggest.basic": false,
+"intelephense.completion.insertUseDeclaration": true,
+
+//path-intellisense插件(js路径感知插件)
+"path-intellisense.extensionOnImport": true,
+
+//PHP DocBlocker插件设置
+"php-docblocker.gap":false,
+"php-docblocker.returnGap": false,
+"php-docblocker.useShortNames": true,
+
+//vscode自带设置
+"window.titleBarStyle": "custom",    //标题栏样式
+"editor.wordWrap": "on",    //自动换行
+"workbench.statusBar.feedback.visible": false,    //关闭笑脸反馈
+"editor.minimap.enabled": false,    //关闭迷你窗口
+}
