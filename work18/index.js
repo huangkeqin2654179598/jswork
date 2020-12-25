@@ -12,11 +12,10 @@ function send() {
     }
 
     //xmlhttp.open('post', 'http://localhost:8080/ajax',true)  //调试通过app.js并截图后，注释本行
-    xmlhttp.open('post','http://139.9.81.203:8090/ajax',true)   //调试通过app.js并截图后，取消本行注释
+    xmlhttp.open('post','http://10.50.0.127:8081',true)   //调试通过app.js并截图后，取消本行注释
     xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
     xmlhttp.send('sno=' + sno + '&name=' + name+"&content="+content)
 
-    console.log("到这里");
     xmlhttp.onreadystatechange = function () {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             let ajaxData=JSON.parse(xmlhttp.responseText)

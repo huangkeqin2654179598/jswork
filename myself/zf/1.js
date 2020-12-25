@@ -13,8 +13,9 @@ const baseurl = 'https://jwc.gdmec.edu.cn'
 const vcodeurl = 'https://jwc.gdmec.edu.cn/CheckCode.aspx'
 const https = require('https')
 const cheerio = require('cheerio')
-const child_process = require('readline')
+const child_process = require('child_process')
 const querystring = require('querystring')
+const readline = require("readline")
 const rl = readline.createInterface({
     input: process.stdin
 })
@@ -69,34 +70,6 @@ https.get(vcodeurl, (res) => {
 
 //2020/10/16 第二部分
 
-const fs = require('fs')
-let {
-    user,
-    password
-} = JSON.parse(fs.readFileSync('zf.json'))
-const baseurl = 'https://jwc.gdmec.edu.cn'
-const vcodeurl = 'https://jwc.gdmec.edu.cn/CheckCode.aspx'
-const https = require('https')
-const cheerio = require('cheerio')
-const child_process = require('child-process')
-const readline = require('readline')
-const querystring = require('querystring')
-const rl = readline.createInterface({
-    input: process.stdin
-})
-let buf = []
-rl.on('line', (line) => {
-    buf.push(line)
-    if (line.trim() == '') rl.close()
-})
-rl.on('close', () => {
-    vcode = buf[0]
-    login()
-})
-let _VIEWSTATE = ''
-let cookie = []
-let vcode = ''
-
 https.get(baseurl, (res) => {
     let chunks = []
     res.on('data', (chunk) => {
@@ -110,18 +83,8 @@ https.get(baseurl, (res) => {
         res.on('data', (chunk) => {
             imgData += chunk
         })
-        res.on('end', () => {
-            fs.writeFile('vcode.png', imgData, 'binary', (err) => {
-                if (err) {
-                    console.log(err)
-                    return
-                }
-                if (process.platform == 'win32') {
-                    child_process.exec('vcode.png')
-                } else {
-                    child_process.exec('open vcode.png')
-                }
-            })
+    })
+})
 
             function login() {
                 let postData = querystring.stringify({
@@ -166,7 +129,7 @@ https.get(baseurl, (res) => {
                     }
                 }
             }
-            https.get(url1, opt, (res) => {
+            https.geturl(opt, (res) => {
                 let chunks = []
                 res.on('data', (chunk) => {
                     chunks.push(chunk)
@@ -178,6 +141,4 @@ https.get(baseurl, (res) => {
                 })
             })
 
-        })
-    })
-})
+//2020/10/23 第三部分
